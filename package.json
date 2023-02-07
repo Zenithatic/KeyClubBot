@@ -1,0 +1,14 @@
+{
+  "name": "keyclubbot",
+  "version": "1.0.0",
+  "description": "discord bot for key club",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.7.1"
+  }
+}
