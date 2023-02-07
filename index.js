@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const tokenModule = require('./modules/token.js')
+const tokenModule = require('./token.js')
 
 const client = new Discord.Client({
     intents: 32727
