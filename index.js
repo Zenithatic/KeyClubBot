@@ -1,7 +1,12 @@
 const Discord = require('discord.js')
+const tokenModule = require('./modules/token.js')
 
 const client = new Discord.Client({
     intents: 32727
 })
 
-client.login()
+client.on("ready", (bot) => {
+    console.log(bot.user.tag + " is ready")
+})
+
+client.login(tokenModule.token)
