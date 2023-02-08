@@ -79,10 +79,6 @@ client.on("messageCreate", message => {
     if (msgContent.includes("keyclubbot") || msgContent.includes("key club bot")){
         message.react('😄')
     }
-
-    if (msgContent.includes("meeting")){
-        message.reply({embeds: [dataModule.meetingEmbedData]})
-    }
 })
 
 // Log into client
