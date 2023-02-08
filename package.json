@@ -3,31 +3,6 @@
   "version": "1.0.0",
   "description": "discord bot for key club",
   "main": "index.js",
-  "dependencies": {
-    "discord-api-types": "^0.37.31",
-    "busboy": "^1.6.0",
-    "discord.js": "^14.7.1",
-    "file-type": "^18.2.0",
-    "fast-deep-equal": "^3.1.3",
-    "ieee754": "^1.2.1",
-    "inherits": "^2.0.4",
-    "peek-readable": "^5.0.0",
-    "lodash": "^4.17.21",
-    "lodash.snakecase": "^4.1.1",
-    "readable-stream": "^3.6.0",
-    "readable-web-to-node-stream": "^3.0.2",
-    "strtok3": "^7.0.0",
-    "safe-buffer": "^5.2.1",
-    "ts-mixer": "^6.0.2",
-    "streamsearch": "^1.1.0",
-    "string_decoder": "^1.3.0",
-    "undici": "^5.18.0",
-    "ws": "^8.12.0",
-    "token-types": "^5.0.1",
-    "tslib": "^2.5.0",
-    "util-deprecate": "^1.0.2"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -40,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Zenithatic/KeyClubBot/issues"
   },
-  "homepage": "https://github.com/Zenithatic/KeyClubBot#readme"
+  "homepage": "https://github.com/Zenithatic/KeyClubBot#readme",
+  "dependencies": {
+    "discord.js": "^14.7.1"
+  }
 }
