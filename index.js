@@ -3,10 +3,8 @@ const Discord = require('discord.js')
 const tokenModule = require('./token.js')
 const dataModule = require('./modules/dataModule.js')
 const data = require('./modules/dataModule.js')
-const swear_words = [];
 
-swear_words.push("fuck", "nigger", "nigga", "bitch", "ass", "cock", "pussy", "shit", "dick")
-console.log(swear_words.length)
+
 // Initiate client
 const client = new Discord.Client({
     intents: [ 
@@ -47,12 +45,6 @@ client.on("messageCreate", message => {
     if (msgContent.includes("meeting")){
         message.reply({embeds: [dataModule.meetingEmbedData]})
     }
-
-    if(msgContent.includes(swear_words[0]) || msgContent.includes(swear_words[1])|| msgContent.includes(swear_words[2])|| msgContent.includes(swear_words[3])|| msgContent.includes(swear_words[4])|| msgContent.includes(swear_words[5])|| msgContent.includes(swear_words[6])){
-        message.reply('Please do not swear in the server')
-    }
-
-
 })
 
 // Log into client
