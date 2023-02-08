@@ -6,8 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Zenithatic",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zenithatic/KeyClubBot.git"
+  },
+  "author": "Zenithatic/KabirJ",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zenithatic/KeyClubBot/issues"
+  },
+  "homepage": "https://github.com/Zenithatic/KeyClubBot#readme",
   "dependencies": {
     "discord.js": "^14.7.1"
   }
