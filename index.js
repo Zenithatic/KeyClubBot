@@ -24,9 +24,11 @@ const commandsPath = path.join(__dirname, 'commands')
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'))
 
 for (const file of commandFiles) {
+    // Get all command files
     const filePath = path.join(commandsPath, file);
     const command = require(filePath)
 
+    // Upload commands to Collection in client
     if ('data' in command && 'execute' in command) {
 		client.commands.set(command.data.name, command);
 	} else {
@@ -41,15 +43,19 @@ client.once("ready", (bot) => {
 
 // On interaction create, taken from discord.js guide
 client.on("interactionCreate", async interaction => {
+    // Return if the interaction is not chat based
     if (!interaction.isChatInputCommand()) return;
 
+    // Get command from client command collection
     const command = interaction.client.commands.get(interaction.commandName);
 
+    // If command doesn't exist, return and log error
     if (!command){
         console.error(`No command matching ${interaction.commandName} was found.`);
 		return;
     }
 
+    // Try to execute command
 	try {
 		await command.execute(interaction);
 	} catch (error) {
@@ -72,10 +78,6 @@ client.on("messageCreate", message => {
     // First test case
     if (msgContent.includes("keyclubbot") || msgContent.includes("key club bot")){
         message.react('😄')
-    }
-
-    if (msgContent.includes("help")){
-        message.reply('Welcome to keyclub! Key Club is an international, student-led organization that provides its members with opportunities to provide service, build character and develop leadership. Basically Key Club aims to cooperate with school principals and teachers to provide high school students with invaluable experience in living and working together and to prepare them for useful citizenship. Our members develop initiative and leadership skills by serving their schools and communities. Ping any of the execs and they will be happy to help you get started!')
     }
 
     if (msgContent.includes("meeting")){

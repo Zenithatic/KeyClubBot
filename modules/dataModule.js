@@ -26,7 +26,7 @@ const meetingEmbed = new Discord.EmbedBuilder()
 // Help embed
 const helpEmbed = new Discord.EmbedBuilder()
     .setColor(Discord.Colors.Blue)
-    .setTitle("KeyClubBot Help")
+    .setTitle("Key Club Help")
     .setAuthor({
         name: "KeyClubBot", 
         iconURL: "https://i.imgur.com/r2SHWqW.png"
@@ -35,9 +35,15 @@ const helpEmbed = new Discord.EmbedBuilder()
     .setThumbnail("https://i.imgur.com/r2SHWqW.png")
     .addFields(
         {
-            name: "Commands", 
-            value: "**help** - displays this embed\n" + 
-                   "**meetingInfo** - displays information about previous meeting notes, future meetings, etc" 
+            name: "KeyClubBot Commands", 
+            value: "**/help** - displays this embed\n" + 
+                   "**/meetingInfo** - displays information about previous meeting notes, future meetings, etc" 
+        }
+    ) 
+    .addFields(
+        {
+            name: "\u200B\nWhat is Key Club?", 
+            value: "Key Club is an international, student-led organization that provides its members with opportunities to provide service, build character and develop leadership. Basically Key Club aims to cooperate with school principals and teachers to provide high school students with invaluable experience in living and working together and to prepare them for useful citizenship. Our members develop initiative and leadership skills by serving their schools and communities. "
         }
     ) 
     .setTimestamp()
