@@ -30,9 +30,19 @@ client.on("messageCreate", message => {
     let msgContent = message.content.toLowerCase()
 
     // First test case
-    if (msgContent.includes("keyclubbot") || msgContent.includes("key club bot")){
+    if (msgContent.includes("help") || msgContent.includes("key club bot")){
         message.react('😄')
     }
+
+
+    if (msgContent.includes("help")){
+        message.reply('Welcome to keyclub! Key Club is an international, student-led organization that provides its members with opportunities to provide service, build character and develop leadership. Basically Key Club aims to cooperate with school principals and teachers to provide high school students with invaluable experience in living and working together and to prepare them for useful citizenship. Our members develop initiative and leadership skills by serving their schools and communities. Ping any of the execs and they will be happy to help you get started!')
+    }
+
+    if (msgContent.includes("meeting")){
+        message.reply('No information yet, check back later')
+    }
+
 })
 
 // Log into client
