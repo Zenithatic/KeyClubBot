@@ -14,7 +14,7 @@ const meetingEmbed = new Discord.EmbedBuilder()
     .addFields(
         {
             name: "Meeting Notes", 
-            value: "All the meeting notes can be found [here](https://drive.google.com/drive/folders/1F4rkhILIqrU4RSkWVNX6Alsia-Oq-QPU?usp=share_link)."
+            value: "All the meeting plans, notes, etc can be found [here](https://drive.google.com/drive/folders/1F4rkhILIqrU4RSkWVNX6Alsia-Oq-QPU?usp=share_link)."
         }
     )   
     .setTimestamp()
@@ -37,7 +37,7 @@ const helpEmbed = new Discord.EmbedBuilder()
         {
             name: "KeyClubBot Commands", 
             value: "**/help** - displays this embed\n" + 
-                   "**/meetingInfo** - displays information about previous meeting notes, future meetings, etc" 
+                   "**/meetinginfo** - displays information about previous meeting notes, future meetings, etc" 
         }
     ) 
     .addFields(
