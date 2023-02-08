@@ -30,7 +30,7 @@ client.on("messageCreate", message => {
     let msgContent = message.content.toLowerCase()
 
     // First test case
-    if (msgContent.includes("help") || msgContent.includes("key club bot")){
+    if (msgContent.includes("keyclubbot") || msgContent.includes("key club bot")){
         message.react('😄')
     }
 
