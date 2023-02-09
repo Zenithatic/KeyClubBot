@@ -32,17 +32,17 @@ for (const file of commandFiles) {
     if ('data' in command && 'execute' in command) {
 		client.commands.set(command.data.name, command);
 	} else {
-		console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
+		console.log(`[WARNING] The command at ${filePath} is missing a required 'data' or 'execute' property.`);
 	}
 }
 
 // Ready callback function
-client.once("ready", (bot) => {
-    console.log(bot.user.tag + " is ready")
+client.once('ready', (bot) => {
+    console.log(bot.user.tag + ' is ready')
 })
 
 // On interaction create, taken from discord.js guide
-client.on("interactionCreate", async interaction => {
+client.on('interactionCreate', async interaction => {
     // Return if the interaction is not chat based
     if (!interaction.isChatInputCommand()) return;
 
@@ -65,7 +65,7 @@ client.on("interactionCreate", async interaction => {
 })
 
 // On message create
-client.on("messageCreate", message => {
+client.on('messageCreate', message => {
 
     // Check if message was sent by a bot
     if (message.author.bot){
@@ -76,7 +76,7 @@ client.on("messageCreate", message => {
     let msgContent = message.content.toLowerCase()
 
     // First test case
-    if (msgContent.includes("keyclubbot") || msgContent.includes("key club bot")){
+    if (msgContent.includes('keyclubbot') || msgContent.includes('key club bot')){
         message.react('😄')
     }
 })

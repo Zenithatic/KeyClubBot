@@ -4,8 +4,8 @@ const dataModule = require('../modules/dataModule')
 
 const data = {
     data: new Discord.SlashCommandBuilder()
-        .setName("help")
-        .setDescription("Displays all the information you need to know about key club and this bot"),
+        .setName('help')
+        .setDescription('Displays all the information you need to know about key club and this bot'),
     async execute(interaction) {
         await interaction.reply({content: '', embeds: [dataModule.helpEmbedData], ephemeral: true})
     }     

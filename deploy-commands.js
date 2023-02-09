@@ -1,8 +1,8 @@
 // script taken from discord.js guide
 const { REST, Routes } = require('discord.js');
-const token = require("./token").token
-const clientID = "1072350339153526855"
-const guildID = "1071233117379121173"
+const token = require('./token').token
+const clientID = '1072350339153526855'
+const guildID = '1071233117379121173'
 const fs = require('node:fs');
 
 const commands = [];
