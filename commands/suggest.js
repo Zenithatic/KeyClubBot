@@ -35,7 +35,7 @@ const data = {
                 name: 'KeyClubBot', 
                 iconURL: 'https://i.imgur.com/r2SHWqW.png'
             })
-            .setDescription('Thanks for suggesting! To verify, here is your suggestion information. If there was a mistake, please DM Patrick W, the vice president or Kabir. Thanks!\n\u200B')
+            .setDescription('Thanks for suggesting! To verify, here is your suggestion information. If there was a mistake in your suggestion, please DM Patrick W, the vice president or Kabir J., the CTO. Thanks!\n\u200B')
             .setThumbnail('https://i.imgur.com/r2SHWqW.png')
             .addFields(
                 {

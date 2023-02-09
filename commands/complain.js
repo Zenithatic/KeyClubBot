@@ -1,23 +1,23 @@
 // Import discord package
 const Discord = require('discord.js')
-const complaintChannelID = "1073041920550518857"
+const complaintChannelID = "1073063994400702546"
 
 const data = {
     data: new Discord.SlashCommandBuilder()
-        .setName('Complaints')
-        .setDescription('Do you have a complaint you would like to share?')
+        .setName('complain')
+        .setDescription('Write a complaint about something or someone. An executive will DM you after they have reviewed it.')
         .addStringOption(
             option => option.setName('complainttype')
-                            .setDescription('The type of suggestion')
+                            .setDescription('The type of complaint')
                             .setRequired(true)
                             .addChoices(
-                                {name: 'Bot Complaint', value: 'Bot Complaint'},
-                                {name: 'Club complaint', value: 'Club Complaint'},
-                                {name: 'Misc. complaint', value: 'Misc. Complaint'}
+                                {name: 'User Complaint', value: 'User Complaint'},
+                                {name: 'Server Complaint', value: 'Server. Complaint'},
+                                {name: 'Misc. Complaint', value: 'Misc. Complaint'}
                             )
         )
         .addStringOption(
-            option => option.setName('Complaint') 
+            option => option.setName('complaint') 
                             .setDescription('Your complaint')
                             .setRequired(true)
         ),
@@ -27,7 +27,7 @@ const data = {
         const complainttype = interaction.options.getString('complainttype')
         const complaint = interaction.options.getString('complaint')
         
-        // Make reply embed for suggester
+        // Make reply embed for complainer
         const embed1 = new Discord.EmbedBuilder()
             .setColor(Discord.Colors.Blue)
             .setTitle('Complaint review')
@@ -35,7 +35,7 @@ const data = {
                 name: 'KeyClubBot', 
                 iconURL: 'https://i.imgur.com/r2SHWqW.png'
             })
-            .setDescription('We are sorry you had to experience trouble in our server. If there was a mistake, please DM Patrick W, the vice president or Kabir J, the CTO. Thanks!\n\u200B')
+            .setDescription('We are sorry you had to experience trouble in our server. If there was a mistake in your complaint, please DM Patrick W, the vice president or Kabir J, the CTO. Thanks!\n\u200B')
             .setThumbnail('https://i.imgur.com/r2SHWqW.png')
             .addFields(
                 {
@@ -45,13 +45,13 @@ const data = {
             ) 
             .addFields(
                 {
-                    name: 'Suggestion', 
+                    name: 'Complaint', 
                     value: `${complaint}`
                 }
             ) 
             .setTimestamp()
             .setFooter({
-                text: 'Key Club Suggestion', 
+                text: 'Key Club Complaint', 
                 iconURL: 'https://i.imgur.com/r2SHWqW.png'
             })
 
@@ -74,8 +74,8 @@ const data = {
                     name: ' ', 
                     value: `**Complaint by:** ${interaction.member.user.tag}\n` + 
                            `**User ID of person:** ${interaction.member.user.id}\n` + 
-                           `**Complaint type:** ${suggestiontype}\n` + 
-                           `**Complaint:** ${suggestion}`
+                           `**Complaint type:** ${complainttype}\n` + 
+                           `**Complaint:** ${complaint}`
                 }
             ) 
             .setTimestamp()
