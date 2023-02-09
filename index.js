@@ -89,8 +89,6 @@ client.on('messageCreate', async message => {
     if (msgContent.includes('sorry')){
         await message.reply("Its ok, we all make mistakes!")
     }
-
-   
 })
 
 // Function to determine if message is clean or not
