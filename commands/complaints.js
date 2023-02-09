@@ -1,52 +1,52 @@
 // Import discord package
 const Discord = require('discord.js')
-const suggestionChannelID = "1073041920550518857"
+const complaintChannelID = "1073041920550518857"
 
 const data = {
     data: new Discord.SlashCommandBuilder()
-        .setName('suggest')
-        .setDescription('Suggest something new for the club/bot. An executive will DM you after they have reviewed it.')
+        .setName('Complaints')
+        .setDescription('Do you have a complaint you would like to share?')
         .addStringOption(
-            option => option.setName('suggestiontype')
+            option => option.setName('complainttype')
                             .setDescription('The type of suggestion')
                             .setRequired(true)
                             .addChoices(
-                                {name: 'Bot suggestion', value: 'Bot suggestion'},
-                                {name: 'Club suggestion', value: 'Club suggestion'},
-                                {name: 'Misc. suggestion', value: 'Misc. suggestion'}
+                                {name: 'Bot Complaint', value: 'Bot Complaint'},
+                                {name: 'Club complaint', value: 'Club Complaint'},
+                                {name: 'Misc. complaint', value: 'Misc. Complaint'}
                             )
         )
         .addStringOption(
-            option => option.setName('suggestion') 
-                            .setDescription('Your suggestion')
+            option => option.setName('Complaint') 
+                            .setDescription('Your complaint')
                             .setRequired(true)
         ),
  
     async execute(interaction){
         // Get option info
-        const suggestiontype = interaction.options.getString('suggestiontype')
-        const suggestion = interaction.options.getString('suggestion')
+        const complainttype = interaction.options.getString('complainttype')
+        const complaint = interaction.options.getString('complaint')
         
         // Make reply embed for suggester
         const embed1 = new Discord.EmbedBuilder()
             .setColor(Discord.Colors.Blue)
-            .setTitle('Suggestion review')
+            .setTitle('Complaint review')
             .setAuthor({
                 name: 'KeyClubBot', 
                 iconURL: 'https://i.imgur.com/r2SHWqW.png'
             })
-            .setDescription('Thanks for suggesting! To verify, here is your suggestion information. If there was a mistake, please DM Patrick W, the vice president or Kabir. Thanks!\n\u200B')
+            .setDescription('We are sorry you had to experience trouble in our server. If there was a mistake, please DM Patrick W, the vice president or Kabir J, the CTO. Thanks!\n\u200B')
             .setThumbnail('https://i.imgur.com/r2SHWqW.png')
             .addFields(
                 {
-                    name: 'Suggestion Type', 
-                    value: `${suggestiontype}`
+                    name: 'Complaint Type', 
+                    value: `${complainttype}`
                 }
             ) 
             .addFields(
                 {
                     name: 'Suggestion', 
-                    value: `${suggestion}`
+                    value: `${complaint}`
                 }
             ) 
             .setTimestamp()
@@ -59,11 +59,11 @@ const data = {
         await interaction.reply({embeds: [embed1], ephemeral: true})
 
         // Post suggestion to suggestion channel via embed
-        const channel = interaction.guild.channels.cache.get(suggestionChannelID)
+        const channel = interaction.guild.channels.cache.get(complaintChannelID)
 
         const embed2 = new Discord.EmbedBuilder()
             .setColor(Discord.Colors.Blue)
-            .setTitle('Suggestion')
+            .setTitle('Complaint')
             .setAuthor({
                 name: 'KeyClubBot', 
                 iconURL: 'https://i.imgur.com/r2SHWqW.png'
@@ -72,15 +72,15 @@ const data = {
             .addFields(
                 {
                     name: ' ', 
-                    value: `**Suggestion by:** ${interaction.member.user.tag}\n` + 
+                    value: `**Complaint by:** ${interaction.member.user.tag}\n` + 
                            `**User ID of person:** ${interaction.member.user.id}\n` + 
-                           `**Suggestion type:** ${suggestiontype}\n` + 
-                           `**Suggestion:** ${suggestion}`
+                           `**Complaint type:** ${suggestiontype}\n` + 
+                           `**Complaint:** ${suggestion}`
                 }
             ) 
             .setTimestamp()
             .setFooter({
-                text: 'Key Club Suggestion', 
+                text: 'Key Club Complaint', 
                 iconURL: 'https://i.imgur.com/r2SHWqW.png'
             })
 
