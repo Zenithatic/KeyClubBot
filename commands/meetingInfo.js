@@ -7,7 +7,7 @@ const data = {
         .setName("meetinginfo")
         .setDescription("Provides the link to the meeting notes, plans, etc"),
     async execute(interaction) {
-        await interaction.reply({content: '', embeds: [dataModule.meetingEmbedData], ephemeral: true})
+        await interaction.reply({content: '', embeds: [dataModule.meetingEmbedData], ephemeral: false})
     }     
 }
 
