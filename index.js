@@ -5,6 +5,10 @@ const dataModule = require('./modules/dataModule.js')
 const data = require('./modules/dataModule.js')
 const fs = require('node:fs')
 const path = require('node:path')
+const badwords  = ["fuck", "bitch", "pussy", "nigger", "nigga", "ass", "dick", "cunt"]
+const { maxHeaderSize } = require('node:http')
+const { measureMemory } = require('node:vm')
+
 
 // Initiate client
 const client = new Discord.Client({
@@ -77,8 +81,22 @@ client.on('messageCreate', message => {
 
     // First test case
     if (msgContent.includes('keyclubbot') || msgContent.includes('key club bot')){
-        message.react('😄')
+        message.react('🤪')
     }
+
+    var i;
+   for (i=0; i < badwords.length; i++){
+     if (msgContent.includes(badwords[i])){
+          message.reply("Please dont say such profanities in the server")
+          
+       }
+    }
+
+    if (msgContent.includes('sorry')){
+        message.reply("Its ok, we all make mistakes!")
+    }
+
+   
 })
 
 // Log into client
