@@ -1,14 +1,9 @@
 // Import modules/packages
 const Discord = require('discord.js')
 const tokenModule = require('./token.js')
-const dataModule = require('./modules/dataModule.js')
-const data = require('./modules/dataModule.js')
 const fs = require('node:fs')
 const path = require('node:path')
-const badwords  = ["fuck", "bitch", "pussy", "nigger", "nigga", "ass", "dick", "cunt"]
-const { maxHeaderSize } = require('node:http')
-const { measureMemory } = require('node:vm')
-
+const badwords = require('./modules/badWords').list
 
 // Initiate client
 const client = new Discord.Client({
@@ -69,7 +64,7 @@ client.on('interactionCreate', async interaction => {
 })
 
 // On message create
-client.on('messageCreate', message => {
+client.on('messageCreate', async message => {
 
     // Check if message was sent by a bot
     if (message.author.bot){
@@ -79,25 +74,35 @@ client.on('messageCreate', message => {
     // Represent message content as variable
     let msgContent = message.content.toLowerCase()
 
-    // First test case
-    if (msgContent.includes('keyclubbot') || msgContent.includes('key club bot')){
-        message.react('🤪')
+    // Check if message contains swear words
+    var isClean = await isCleanMessage(msgContent)
+    if(!isClean){
+        await message.delete()
+        await message.channel.send(`Please do not swear in this server, ${message.member.nickname}`)
     }
 
-    var i;
-   for (i=0; i < badwords.length; i++){
-     if (msgContent.includes(badwords[i])){
-          message.reply("Please dont say such profanities in the server")
-          
-       }
+    // First test case
+    if (msgContent.includes('keyclubbot') || msgContent.includes('key club bot')){
+        await message.react('🤪')
     }
 
     if (msgContent.includes('sorry')){
-        message.reply("Its ok, we all make mistakes!")
+        await message.reply("Its ok, we all make mistakes!")
     }
 
    
 })
+
+// Function to determine if message is clean or not
+async function isCleanMessage(msg) {
+    // Check for bad words
+    for (var i = 0; i < badwords.length; i++){
+        if (msg.includes(badwords[i])){
+            return false
+        }
+    }
+    return true
+}
 
 // Log into client
 client.login(tokenModule.token)
