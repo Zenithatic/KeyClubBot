@@ -80,7 +80,6 @@ client.on('messageCreate', async message => {
         await message.delete()
         await message.channel.send(`Please do not swear in this server, ${message.member.nickname}`)
     }
-
     // First test case
     if (msgContent.includes('keyclubbot') || msgContent.includes('key club bot')){
         await message.react('🤪')
