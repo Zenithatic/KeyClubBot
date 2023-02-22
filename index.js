@@ -96,7 +96,7 @@ client.on("messageUpdate", async msg => {
     var isClean = await isCleanMessage(msg.content)
     if(!isClean){
         await msg.delete()
-        await msg.channel.send(`Please do not swear in this server, ${message.member.nickname}`)
+        await msg.channel.send(`Please do not swear in this server, ${msg.member.nickname}`)
     }
 })
 
