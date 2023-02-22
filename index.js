@@ -90,6 +90,22 @@ client.on('messageCreate', async message => {
     }
 })
 
+// On message edit
+client.on("messageUpdate", async msg => {
+    // Check if message contains swear words
+    var isClean = await isCleanMessage(msg.content)
+    if(!isClean){
+        await msg.delete()
+        await msg.channel.send(`Please do not swear in this server, ${message.member.nickname}`)
+    }
+})
+
+client.on('messageDeleteBulk', async messages => {
+    messages.forEach(element =>{
+        console.log(element)
+    })
+})
+
 // Function to determine if message is clean or not
 async function isCleanMessage(msg) {
     // Check for bad words
