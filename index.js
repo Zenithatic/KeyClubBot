@@ -91,7 +91,7 @@ client.on('messageCreate', async message => {
 })
 
 // On message edit
-client.on("messageUpdate", async (oldmsg, newmsg)) => {
+client.on("messageUpdate", async (oldmsg, newmsg) => {
     // Check if message contains swear words
     var isClean = await isCleanMessage(newmsg.content)
     if(!isClean){
