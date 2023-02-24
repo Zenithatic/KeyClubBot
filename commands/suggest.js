@@ -5,7 +5,7 @@ const suggestionChannelID = "1073041920550518857"
 const data = {
     data: new Discord.SlashCommandBuilder()
         .setName('suggest')
-        .setDescription('Suggest something new for the club/bot. An executive will DM you after they have reviewed it.')
+        .setDescription('Suggest something new for the club/bot.')
         .addStringOption(
             option => option.setName('suggestiontype')
                             .setDescription('The type of suggestion')
@@ -35,7 +35,7 @@ const data = {
                 name: 'KeyClubBot', 
                 iconURL: 'https://i.imgur.com/r2SHWqW.png'
             })
-            .setDescription('Thanks for suggesting! To verify, here is your suggestion information. If there was a mistake in your suggestion, please DM Patrick W, the vice president or Kabir J., the CTO. Thanks!\n\u200B')
+            .setDescription('Thanks for suggesting! To verify, here is your suggestion information. We will now open a ticket channel for discussion. Please find that channel in the server to discuss. If there was a mistake in your suggestion, please DM Patrick W, the vice president or Kabir J., the CTO. Thanks!\n\u200B')
             .setThumbnail('https://i.imgur.com/r2SHWqW.png')
             .addFields(
                 {
