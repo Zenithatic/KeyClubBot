@@ -35,8 +35,7 @@ const data = {
                 name: 'KeyClubBot', 
                 iconURL: 'https://i.imgur.com/r2SHWqW.png'
             })
-            .setDescription('We are sorry you had to experience trouble in our server. We will now open a ticket channel for discussion. Please find that channel in the server to discuss.
- If there was a mistake in your complaint, please DM Patrick W, the vice president or Kabir J, the CTO. Thanks!\n\u200B')
+            .setDescription('We are sorry you had to experience trouble in our server. We will now open a ticket channel for discussion. Please find that channel in the server to discuss. If there was a mistake in your complaint, please DM Patrick W, the vice president or Kabir J, the CTO. Thanks!\n\u200B')
             .setThumbnail('https://i.imgur.com/r2SHWqW.png')
             .addFields(
                 {
