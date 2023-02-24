@@ -5,7 +5,7 @@ const complaintChannelID = "1073063994400702546"
 const data = {
     data: new Discord.SlashCommandBuilder()
         .setName('complain')
-        .setDescription('Write a complaint about something or someone. An executive will DM you after they have reviewed it.')
+        .setDescription('Write a complaint about something or someone.')
         .addStringOption(
             option => option.setName('complainttype')
                             .setDescription('The type of complaint')
