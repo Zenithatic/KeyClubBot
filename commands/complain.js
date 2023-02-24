@@ -85,6 +85,34 @@ const data = {
             })
 
         await channel.send({embeds: [embed2]})
+
+        // Create separate private channel
+        await interaction.guild.channels.create({
+            name: 'complaint-ticket-' + interaction.member.id,
+            type: Discord.ChannelType.GuildText,
+            parent: "1078514773672599733",
+            permissionOverwrites: [
+                {
+                    id: interaction.guild.id,
+                    deny: [Discord.PermissionFlagsBits.ViewChannel]
+                }
+                ,
+                {
+                    id: interaction.member.id,
+                    allow: [
+                        Discord.PermissionFlagsBits.ViewChannel, 
+                        Discord.PermissionFlagsBits.SendMessages, 
+                        Discord.PermissionFlagsBits.ReadMessageHistory, 
+                        Discord.PermissionFlagsBits.AttachFiles, 
+                        Discord.PermissionFlagsBits.UseExternalEmojis, 
+                        Discord.PermissionFlagsBits.MentionEveryone,
+                        Discord.PermissionFlagsBits.UseExternalStickers,    
+                    ]
+                }
+            ]
+        }).then(async chan => {
+            await chan.send({content: "@everyone", embeds: [embed2]})
+        })
     }
 }
 

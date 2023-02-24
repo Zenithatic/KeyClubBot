@@ -39,8 +39,8 @@ const helpEmbed = new Discord.EmbedBuilder()
             value: '**/help** - displays this embed\n' + 
                    '**/meetinginfo** - displays information about previous meeting notes, future meetings, etc\n' +
                    '**/ping** - a test command to see if the bot is online\n' + 
-                   '**/suggest** - provide a suggestion for the executives of the club to review\n' + 
-                   '**/complain** - provide a complaint for the executives of the club to review\n'
+                   '**/suggest** - provide a suggestion for the executives of the club to review & opens a ticket for further discussion\n' + 
+                   '**/complain** - provide a complaint for the executives of the club to review & opens a ticket for further discussion\n'
         }
     ) 
     .addFields(
