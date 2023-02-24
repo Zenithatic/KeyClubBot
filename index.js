@@ -84,10 +84,6 @@ client.on('messageCreate', async message => {
     if (msgContent.includes('keyclubbot') || msgContent.includes('key club bot')){
         await message.react('🤪')
     }
-
-    if (msgContent.includes('sorry')){
-        await message.reply("Its ok, we all make mistakes!")
-    }
 })
 
 // On message edit
