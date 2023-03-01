@@ -13,8 +13,8 @@ const data = {
         ,
     async execute(interaction){
         msgsToDelete = interaction.options.getNumber("messages")
-        interaction.channel.bulkDelete(msgsToDelete)
-        interaction.reply({content: `successful deletion of ${msgsToDelete} messages.`, ephemeral: true})
+        await interaction.channel.bulkDelete(msgsToDelete)
+        await interaction.reply({content: `successful deletion of ${msgsToDelete} messages.`, ephemeral: true})
     }
 }
 

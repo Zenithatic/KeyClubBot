@@ -11,7 +11,7 @@ const data = {
             await interaction.guild.channels.delete(channel.id, "closing ticket")
         }
         else{
-            interaction.reply({content: "This channel is not a ticket!", ephemeral: true})
+            await interaction.reply({content: "This channel is not a ticket!", ephemeral: true})
         }
 
     }
