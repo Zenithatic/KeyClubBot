@@ -7,7 +7,7 @@ const data = {
         .setDefaultMemberPermissions(Discord.PermissionFlagsBits.Administrator),
     async execute(interaction){
         var channel = interaction.channel
-        if (channel.name.startsWith("complaint-ticket") || (channel.name.startsWith("suggest-ticket"))){
+        if (channel.name.startsWith("complaint-ticket") || (channel.name.startsWith("suggest-ticket")) || (channel.name.startsWith("user-ticket"))){
             await interaction.guild.channels.delete(channel.id, "closing ticket")
         }
         else{
