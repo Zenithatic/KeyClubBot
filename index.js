@@ -111,7 +111,7 @@ client.on('messageDeleteBulk', async (messages) => {
         console.log(element)
     })
 })
-
+  //
 // Function to determine if message is clean or not
 async function isCleanMessage(msg) {
     // Check for bad words
