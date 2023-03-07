@@ -122,6 +122,7 @@ async function isCleanMessage(msg) {
     }
     return true
 }
+//o]lol
 
 // Log into client
 client.login(tokenModule.token)
