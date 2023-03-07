@@ -23,6 +23,7 @@ const data = {
         await channel.send({content: text})
 
         await interaction.reply({content: "Message done.", ephemeral: true})
+        await setTimeout(() => interaction.deleteReply(), 5000)
     }
 }
 
