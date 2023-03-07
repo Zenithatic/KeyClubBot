@@ -76,7 +76,7 @@ client.on('messageCreate', async message => {
 
     // Check if message contains swear words
     var isClean = await isCleanMessage(msgContent)
-    if(!isClean){
+    if(!isClean && message.channelId != '1071239980145446942'){
         await message.delete()
         await message.channel.send(`Please do not swear in this server, ${message.member.nickname}`)
     }

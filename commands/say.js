@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 const data = {
     data: new Discord.SlashCommandBuilder()
         .setName('say')
-        .setDescription('allows the bulk deletion of a custom number of messages')
+        .setDescription('let the bot say something')
         .setDefaultMemberPermissions(Discord.PermissionFlagsBits.Administrator)
         .addChannelOption(option => 
             option.setName('channel')
