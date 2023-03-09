@@ -27,8 +27,6 @@ const data = {
             })
             .setColor(Discord.Colors.Blurple)
             .setTimestamp()
-            .setThumbnail(interaction.member.avatarURL())
-    
         
         if (user == null){
             // query for user and if not, insert 
@@ -40,10 +38,11 @@ const data = {
                 await collection.updateOne(query, userData, {upsert: true})
 
                 walletEmbed.setTitle('Wallet of ' + interaction.member.user.tag)
+                walletEmbed.setThumbnail(interaction.member.avatarURL())
                 walletEmbed.setDescription(
                     'Wallet ID: ' + interaction.member.id + 
-                    '\nKeycoins: ' + '0' + 
-                    '\nKeys: ' + '0'
+                    '\nKeycoins: ' + '0' + "<:keycoin:1083436466560049172>" + 
+                    '\nKeys: ' + '0' + "🔑"
                 )
 
                 await interaction.reply({embeds: [walletEmbed]})
@@ -52,10 +51,11 @@ const data = {
                 var userData = await collection.findOne(query)
 
                 walletEmbed.setTitle('Wallet of ' + interaction.member.user.tag)
+                walletEmbed .setThumbnail(interaction.member.avatarURL())
                 walletEmbed.setDescription(
                     'Wallet ID: ' + interaction.member.id + 
-                    '\nKeycoins: ' + `${userData.keycoins}` + 
-                    '\nKeys: ' + `${userData.keys}`
+                    '\nKeycoins: ' + `${userData.keycoins}` + "<:keycoin:1083436466560049172>" + 
+                    '\nKeys: ' + `${userData.keys}` + "🔑"
                 )
 
                 await interaction.reply({embeds: [walletEmbed]})
@@ -73,10 +73,11 @@ const data = {
                 await collection.updateOne(query, userData, {upsert: true})
 
                 walletEmbed.setTitle('Wallet of ' + user.tag)
+                walletEmbed.setThumbnail(user.avatarURL())
                 walletEmbed.setDescription(
                     'Wallet ID: ' + user.id + 
-                    '\nKeycoins: ' + '0' + 
-                    '\nKeys: ' + '0'
+                    '\nKeycoins: ' + '0' + "<:keycoin:1083436466560049172>" + 
+                    '\nKeys: ' + '0' + "🔑"
                 )
 
                 await interaction.reply({embeds: [walletEmbed]})
@@ -85,10 +86,11 @@ const data = {
                 var userData = await collection.findOne(query)
 
                 walletEmbed.setTitle('Wallet of ' + user.tag)
+                walletEmbed.setThumbnail(user.avatarURL())
                 walletEmbed.setDescription(
                     'Wallet ID: ' + user.id + 
-                    '\nKeycoins: ' + `${userData.keycoins}` + 
-                    '\nKeys: ' + `${userData.keys}`
+                    '\nKeycoins: ' + `${userData.keycoins}` + "<:keycoin:1083436466560049172>" + 
+                    '\nKeys: ' + `${userData.keys}` + "🔑"
                 )
 
                 await interaction.reply({embeds: [walletEmbed]})
