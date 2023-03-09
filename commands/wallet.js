@@ -38,7 +38,7 @@ const data = {
                 await collection.updateOne(query, userData, {upsert: true})
 
                 walletEmbed.setTitle('Wallet of ' + interaction.member.user.tag)
-                walletEmbed.setThumbnail(interaction.member.avatarURL())
+                walletEmbed.setThumbnail(interaction.member.user.avatarURL())
                 walletEmbed.setDescription(
                     'Wallet ID: ' + interaction.member.id + 
                     '\nKeycoins: ' + '0' + "<:keycoin:1083436466560049172>" + 
@@ -51,7 +51,7 @@ const data = {
                 var userData = await collection.findOne(query)
 
                 walletEmbed.setTitle('Wallet of ' + interaction.member.user.tag)
-                walletEmbed.setThumbnail(interaction.member.avatarURL())
+                walletEmbed.setThumbnail(interaction.member.user.avatarURL())
                 walletEmbed.setDescription(
                     'Wallet ID: ' + interaction.member.id + 
                     '\nKeycoins: ' + `${userData.keycoins}` + "<:keycoin:1083436466560049172>" + 
