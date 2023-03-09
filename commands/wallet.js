@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
 const Mongo = require('mongodb')
+const uri = require('../token').mongouri
 
 const data = {
     data: new Discord.SlashCommandBuilder()
@@ -12,9 +13,8 @@ const data = {
         ),
     async execute(interaction){
         const user = interaction.options.getUser('user')
-        
-        const uri = "mongodb+srv://general:general@keyclubdata.pzu3vh9.mongodb.net/?retryWrites=true&w=majority";
-        const client = new Mongo.MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: Mongo.ServerApiVersion.v1});
+    
+        const client = new Mongo.MongoClient(uri.mongouri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: Mongo.ServerApiVersion.v1});
         
         await client.connect()
 
