@@ -14,11 +14,21 @@ const data = {
     async execute(interaction){
         const user = interaction.options.getUser('user')
     
-        const client = new Mongo.MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: Mongo.ServerApiVersion.v1});
+        const client = new Mongo.MongoClient(uri    , { useNewUrlParser: true, useUnifiedTopology: true, serverApi: Mongo.ServerApiVersion.v1});
         
         await client.connect()
 
         const collection = await client.db("KeyClub").collection("Data");
+
+        const walletEmbed = new Discord.EmbedBuilder()
+            .setAuthor({
+                name: 'KeyClubBot', 
+                iconURL: 'https://i.imgur.com/r2SHWqW.png'
+            })
+            .setColor(Discord.Colors.Blurple)
+            .setTimestamp()
+            .setThumbnail(interaction.member.avatarURL())
+    
         
         if (user == null){
             // query for user and if not, insert 
@@ -28,11 +38,27 @@ const data = {
             if (exists == 0){
                 userData = {$set: {id: interaction.member.id, keycoins: 0, keys: 0}}
                 await collection.updateOne(query, userData, {upsert: true})
-                await interaction.reply(`Your id ${interaction.member.id} Your keycoins 0 Your keys 0`)
+
+                walletEmbed.setTitle('Wallet of ' + interaction.member.user.tag)
+                walletEmbed.setDescription(
+                    'Wallet ID: ' + interaction.member.id + 
+                    '\nKeycoins: ' + '0' + 
+                    '\nKeys: ' + '0'
+                )
+
+                await interaction.reply({embeds: [walletEmbed]})
             }
             else{
                 var userData = await collection.findOne(query)
-                await interaction.reply(`Your id ${userData.id} Your keycoins ${userData.keycoins} Your keys ${userData.keys}`)
+
+                walletEmbed.setTitle('Wallet of ' + interaction.member.user.tag)
+                walletEmbed.setDescription(
+                    'Wallet ID: ' + interaction.member.id + 
+                    '\nKeycoins: ' + `${userData.keycoins}` + 
+                    '\nKeys: ' + `${userData.keys}`
+                )
+
+                await interaction.reply({embeds: [walletEmbed]})
             }
 
 
@@ -45,11 +71,27 @@ const data = {
             if (exists == 0){
                 userData = {$set: {id: user.id, keycoins: 0, keys: 0}}
                 await collection.updateOne(query, userData, {upsert: true})
-                await interaction.reply(`That person's id ${user.id} Their keycoins 0 Their keys 0`)
+
+                walletEmbed.setTitle('Wallet of ' + user.tag)
+                walletEmbed.setDescription(
+                    'Wallet ID: ' + user.id + 
+                    '\nKeycoins: ' + '0' + 
+                    '\nKeys: ' + '0'
+                )
+
+                await interaction.reply({embeds: [walletEmbed]})
             }
             else{
                 var userData = await collection.findOne(query)
-                await interaction.reply(`That person's id ${userData.id} That person's keycoins ${userData.keycoins} That person's keys ${userData.keys}`)
+
+                walletEmbed.setTitle('Wallet of ' + user.tag)
+                walletEmbed.setDescription(
+                    'Wallet ID: ' + user.id + 
+                    '\nKeycoins: ' + `${userData.keycoins}` + 
+                    '\nKeys: ' + `${userData.keys}`
+                )
+
+                await interaction.reply({embeds: [walletEmbed]})
             }
         }
 
