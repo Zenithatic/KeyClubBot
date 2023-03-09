@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Zenithatic/KeyClubBot#readme",
   "dependencies": {
     "bad-words": "^3.0.4",
-    "discord.js": "^14.7.1"
+    "discord.js": "^14.7.1",
+    "mongodb": "^5.1.0"
   }
 }
