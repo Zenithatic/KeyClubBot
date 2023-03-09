@@ -51,7 +51,7 @@ const data = {
                 var userData = await collection.findOne(query)
 
                 walletEmbed.setTitle('Wallet of ' + interaction.member.user.tag)
-                walletEmbed .setThumbnail(interaction.member.avatarURL())
+                walletEmbed.setThumbnail(interaction.member.avatarURL())
                 walletEmbed.setDescription(
                     'Wallet ID: ' + interaction.member.id + 
                     '\nKeycoins: ' + `${userData.keycoins}` + "<:keycoin:1083436466560049172>" + 
