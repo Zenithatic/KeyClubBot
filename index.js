@@ -92,7 +92,7 @@ client.on('messageCreate', async message => {
     }
 
     if (msgContent.includes('kevin') || msgContent.includes('ho')){
-        await message.reply('hellosh feeeeshics shtudensh')
+        await message.reply('hellosh feeeeshics shtudensh   ')
     }
 
     
