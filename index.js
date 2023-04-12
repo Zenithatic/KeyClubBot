@@ -92,8 +92,13 @@ client.on('messageCreate', async message => {
     }
 
     if (msgContent.includes('kevin') || msgContent.includes('ho')){
-        await message.reply('hellosh feeeeshics shtudensh   ')
+        await message.reply('hellosh feeeeshics shtudensh')
     }
+    if (msgContent.includes('osh')){
+        await message.reply('Hellosh feeshic shtudensh')
+    }
+
+    
 
     
 //test commit
