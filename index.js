@@ -91,6 +91,10 @@ client.on('messageCreate', async message => {
         await message.reply("You look like a discombobulated philosophical butt-flake disabled Crip-walking crawfish half-eaten autistic autobot doin’ the cha-cha slide with seventeen naked mole rats in your basement, your grandmother got raped by a crouton with a Gucci belt in northern Idaho boy. Shut your dirty ass up boy, I swear to God I’m really gonna get to the slackin' and rackin' and dickita-dackin and flippin' and rippin' and dippin' and slippin' and pippin and dippin' and rippin' and tippin' in ya fat ass, your name is DJ Trunks, more like DJ Skunks cause you smell like poop, you ugly ass bitch, you are dirty like shit. I caught you at picture day dressed up like a clown with no hair, said [singing some song that I don’t know mockingly], started singing Japanese songs to your girlfriend saying “Oaku, amanatai, amanakinasai-ya”. And then she bitch slapped you with a frying pan and licked your testicles and said “anuminum OKRRRR”. DUMBASS BOY, run that shit back.")
     }
 
+    if (msgContent.includes('kevin') || msgContent.includes('ho')){
+        await message.reply('hellosh feeeeshics shtudensh')
+    }
+
     
 //test commit
     
