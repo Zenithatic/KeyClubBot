@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 const tokenModule = require('./token.js')
 const fs = require('node:fs')
 const path = require('node:path')
-const badwords = require('./modules/badWords').list
+const badwords = require('./modules/badWords.js').list
 
 // Initiate client
 const client = new Discord.Client({
@@ -82,21 +82,15 @@ client.on('messageCreate', async message => {
     }
     // First test case
     if (msgContent.includes('keyclubbot') || msgContent.includes('key club bot')){
-        await message.react('🤪')
+        await message.react('😊')
     }
-
-    if (msgContent.includes('insult')){
-        await message.reply("Listen to me right now, Trunks. Tell me why you and your family did a GTA 5 heist on the T grizzly’s diamond-fuckin’-encrusted testicle, my boy, you look like a double-dipped, chocolate chip, cleft-lip, charcoal slim jim with a gargamel nose, a Mr. Crocker hunch back, no fuckin’ feet, nine-arm, seven-stomachs, two ball fades, your stepdad beat you with a whiffle ball bat. You’re curled up into a ball like an autistic bakugan. You live in a sophisticated mud hut, your washing machine is a bucket of water that you shake, and you brush your teeth with your grandpa’s back scratcher and you floss your teeth with zipline cables. I caught you jerking off in a porta potty with a Thanos gauntlet on while your grandmother got simultaneously buttfucked by a clan of chimpanzees dressed up as The Wiggles while she was snorting cott- fucking, Keemstar’s cotton candy Gfuel off of the back of a dirty toilet seat my boy, you are really ugly like shit. You are a walking glitch, “dJ tRuNkS”. Every time your Dad asks you a question at dinner, you say “okay, DRRRRRRRR”, and start fuckin’ lagging, you fuckin ugly ass boy, you breathe like shit boy, ugly ass boy. And I caught you giving a reverse cow rimjob to your tickle-me Elmo doll, and that bitch was like “Elmo! AUHH”, DUMBASS BOY run that shit back. Say something, pussy")
-        await message.react('🖕🏻')
-        await message.reply("You look like a discombobulated philosophical butt-flake disabled Crip-walking crawfish half-eaten autistic autobot doin’ the cha-cha slide with seventeen naked mole rats in your basement, your grandmother got raped by a crouton with a Gucci belt in northern Idaho boy. Shut your dirty ass up boy, I swear to God I’m really gonna get to the slackin' and rackin' and dickita-dackin and flippin' and rippin' and dippin' and slippin' and pippin and dippin' and rippin' and tippin' in ya fat ass, your name is DJ Trunks, more like DJ Skunks cause you smell like poop, you ugly ass bitch, you are dirty like shit. I caught you at picture day dressed up like a clown with no hair, said [singing some song that I don’t know mockingly], started singing Japanese songs to your girlfriend saying “Oaku, amanatai, amanakinasai-ya”. And then she bitch slapped you with a frying pan and licked your testicles and said “anuminum OKRRRR”. DUMBASS BOY, run that shit back.")
-    }
-
     if (msgContent.includes('kevin') || msgContent.includes('mr. ho')){
         await message.reply('hellosh feeeeshics shtudensh')
     }
     if (msgContent.includes('osh')){
         await message.reply('Hellosh feeshic shtudensh')
     }
+<<<<<<< HEAD
 
     if (msgContent.includes('what is the solution to the matrix')||('what is the solution to the matrix')){
         await message.reply('The solution to the matrix lies in King Tate\'s hands')
@@ -107,6 +101,8 @@ client.on('messageCreate', async message => {
     
 //test commit
     
+=======
+>>>>>>> 4b76631e3bda708b5942f1bc9652cdaa1e41fa86
 })
 
 // On message edit
@@ -124,7 +120,7 @@ client.on('messageDeleteBulk', async (messages) => {
         console.log(element)
     })
 })
-  //
+
 // Function to determine if message is clean or not
 async function isCleanMessage(msg) {
     // Check for bad words
@@ -135,7 +131,6 @@ async function isCleanMessage(msg) {
     }
     return true
 }
-//o]lol
 
 // Log into client
 client.login(tokenModule.token)
