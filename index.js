@@ -90,19 +90,6 @@ client.on('messageCreate', async message => {
     if (msgContent.includes('osh')){
         await message.reply('Hellosh feeshic shtudensh')
     }
-<<<<<<< HEAD
-
-    if (msgContent.includes('what is the solution to the matrix')||('what is the solution to the matrix')){
-        await message.reply('The solution to the matrix lies in King Tate\'s hands')
-        await message.reply('He is my king 👑')
-    }
-    
-
-    
-//test commit
-    
-=======
->>>>>>> 4b76631e3bda708b5942f1bc9652cdaa1e41fa86
 })
 
 // On message edit
