@@ -98,6 +98,10 @@ client.on('messageCreate', async message => {
         await message.reply('Hellosh feeshic shtudensh')
     }
 
+    if (msgContent.includes('what is the solution to the matrix')||('what is the solution to the matrix')){
+        await message.reply('The solution to the matrix lies in King Tate\'s hands')
+        await message.reply('He is my king 👑')
+    }
     
 
     
