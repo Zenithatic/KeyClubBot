@@ -40,7 +40,13 @@ const helpEmbed = new Discord.EmbedBuilder()
                    '**/meetinginfo** - displays information about previous meeting notes, future meetings, etc\n' +
                    '**/ping** - a test command to see if the bot is online\n' + 
                    '**/suggest** - provide a suggestion for the executives of the club to review & opens a ticket for further discussion\n' + 
-                   '**/complain** - provide a complaint for the executives of the club to review & opens a ticket for further discussion\n'
+                   '**/complain** - provide a complaint for the executives of the club to review & opens a ticket for further discussion\n' + 
+                   '**/wallet** - provide an embed showing your financial status\n' + 
+                   '**/joke** - provides a family friendly joke with type of your choice\n' + 
+                   '**/maketicket** - make a custom ticket\n' + 
+                   '**/closeticket** - closes the ticket the command was ran in (mod only)\n' + 
+                   '**/bulkdelete** - bulk deletes a set number of messages (mod only)\n'
+
         }
     ) 
     .addFields(
