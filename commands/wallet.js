@@ -14,7 +14,13 @@ const data = {
     async execute(interaction){
         const user = interaction.options.getUser('user')
     
-        const client = new Mongo.MongoClient(uri    , { useNewUrlParser: true, useUnifiedTopology: true, serverApi: Mongo.ServerApiVersion.v1});
+        const client = new MongoClient(uri, {
+            serverApi: {
+              version: ServerApiVersion.v1,
+              strict: true,
+              deprecationErrors: true,
+            }
+          });          
         
         await client.connect()
 
