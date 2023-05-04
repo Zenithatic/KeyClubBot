@@ -14,7 +14,7 @@ const data = {
     async execute(interaction){
         const user = interaction.options.getUser('user')
     
-        const client = new MongoClient(uri, {
+        const client = new Mongo.MongoClient(uri, {
             serverApi: {
               version: ServerApiVersion.v1,
               strict: true,
