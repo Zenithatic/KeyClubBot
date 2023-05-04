@@ -97,8 +97,6 @@ const data = {
                 await interaction.reply({embeds: [walletEmbed]})
             }
         }
-
-        setTimeout(() => {client.close()}, 1500)
     }
 }
 
