@@ -16,11 +16,11 @@ const data = {
     
         const client = new Mongo.MongoClient(uri, {
             serverApi: {
-              version: ServerApiVersion.v1,
-              strict: true,
-              deprecationErrors: true,
+                version: Mongo.ServerApiVersion.v1,
+                strict: true,
+                deprecationErrors: true,
             }
-          });          
+        });          
         
         await client.connect()
 
