@@ -44,7 +44,8 @@ const data = {
                     '\nKeycoins: ' + '0' + "<:keycoin:1083436466560049172>" + 
                     '\nKeys: ' + '0' + "🔑"
                 )
-
+                
+                await interaction.deferReply({ ephemeral: true });
                 await interaction.reply({embeds: [walletEmbed]})
             }
             else{
@@ -58,6 +59,7 @@ const data = {
                     '\nKeys: ' + `${userData.keys}` + "🔑"
                 )
 
+                await interaction.deferReply({ ephemeral: true });
                 await interaction.reply({embeds: [walletEmbed]})
             }
 
@@ -80,6 +82,7 @@ const data = {
                     '\nKeys: ' + '0' + "🔑"
                 )
 
+                await interaction.deferReply({ ephemeral: true });
                 await interaction.reply({embeds: [walletEmbed]})
             }
             else{
@@ -93,6 +96,7 @@ const data = {
                     '\nKeys: ' + `${userData.keys}` + "🔑"
                 )
 
+                await interaction.deferReply({ ephemeral: true });
                 await interaction.reply({embeds: [walletEmbed]})
             }
         }
