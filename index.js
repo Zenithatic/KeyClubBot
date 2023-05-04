@@ -55,12 +55,14 @@ client.on('interactionCreate', async interaction => {
     }
 
     // Try to execute command
-	try {
-		await command.execute(interaction);
-	} catch (error) {
-		console.error(error);
-		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
-	}
+	//try {
+	//	await command.execute(interaction);
+	//} catch (error) {
+	//	console.error(error);
+	//	await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+	//}
+
+    await command.execute(interaction)
 })
 
 // On message create
