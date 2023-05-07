@@ -99,6 +99,14 @@ client.on('messageCreate', async message => {
     if (msgContent.includes('mista ho')){
         await message.reply('Hellosh oh ah ru dont waste the good seatsh, dont worlly')
     }
+
+    if (msgContent.includes('mista ho')){
+        await message.reply('Hellosh oh ah ru dont waste the good seatsh, dont worlly')
+    }   
+
+    if (msgContent.includes('Yadhunandhan Karthikeyan')){
+        await message.reply('yaHOOOOOOOOOOOOOOO')
+    }
     
 })
 
