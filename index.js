@@ -106,8 +106,7 @@ client.on('messageCreate', async message => {
 
     if (msgContent.includes('yadhunandhan karthikeyan')){
         await message.reply('yaHOOOOOOOOOOOOOOO')
-    }
-    
+    }  
 })
 
 // On message edit

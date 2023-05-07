@@ -16,7 +16,7 @@ const data = {
                   .setRequired(true)   
         )
         .addAttachmentOption(option => 
-            option.setName('nigger')
+            option.setName('image')
             .setDescription('image to upload')
             .setRequired(false)
         ),
