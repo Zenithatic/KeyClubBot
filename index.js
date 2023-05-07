@@ -92,6 +92,22 @@ client.on('messageCreate', async message => {
     if (msgContent.includes('osh')){
         await message.reply('Hellosh feeshic shtudensh')
     }
+
+    if (msgContent.includes('hello keyclub bot')){
+        await message.reply('Hellosh oh ah ru')
+    }
+    if (msgContent.includes('mista ho')){
+        await message.reply('Hellosh oh ah ru dont waste the good seatsh, dont worlly')
+    }
+
+    if (msgContent.includes('mista ho')){
+        await message.reply('Hellosh oh ah ru dont waste the good seatsh, dont worlly')
+    }   
+
+    if (msgContent.includes('yadhunandhan karthikeyan')){
+        await message.reply('yaHOOOOOOOOOOOOOOO')
+    }
+    
 })
 
 // On message edit

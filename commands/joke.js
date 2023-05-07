@@ -14,15 +14,21 @@ const data = {
                                 {name: 'Pun', value: 'Pun'},
                                 {name: 'Spooky', value: 'Spooky'},
                                 {name: 'Christmas', value: 'Christmas'},
-                                {name: 'Miscellaneous', value: 'Miscellaneous'}
+                                {name: 'Miscellaneous', value: 'Miscellaneous'},
+                                {name: 'Black', value: 'Black'}
                             )                            
         ),
     async execute(interaction){
         const jokeType = interaction.options.getString('type')
 
         // prepare http request
+        if (jokeType != "Black"){
         var reqString = 'https://v2.jokeapi.dev/joke/' + jokeType + '?blacklistFlags=nsfw,religious,political,racist,sexist,explicit'
         const joke = await fetch(reqString).then((res) => res.json())
+        }
+        else{
+            await interaction.reply("bitch ass nigga")
+        }
         
         // format and send joke
         if (joke.type == 'twopart'){
