@@ -104,7 +104,7 @@ client.on('messageCreate', async message => {
         await message.reply('Hellosh oh ah ru dont waste the good seatsh, dont worlly')
     }   
 
-    if (msgContent.includes('Yadhunandhan Karthikeyan')){
+    if (msgContent.includes('yadhunandhan karthikeyan')){
         await message.reply('yaHOOOOOOOOOOOOOOO')
     }
     
