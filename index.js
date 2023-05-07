@@ -96,9 +96,7 @@ client.on('messageCreate', async message => {
     if (msgContent.includes('hello keyclub bot')){
         await message.reply('Hellosh oh ah ru')
     }
-    if (msgContent.includes('mista ho')){
-        await message.reply('Hellosh oh ah ru dont waste the good seatsh, dont worlly')
-    }
+
 
     if (msgContent.includes('mista ho')){
         await message.reply('Hellosh oh ah ru dont waste the good seatsh, dont worlly')
